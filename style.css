@@ -1,3 +1,69 @@
+/* Portfolio Section Styles */
+.portfolio {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 0 16px;
+    text-align: center;
+    z-index: 1;
+    position: relative;
+}
+.portfolio h2 {
+    font-size: 2.2em;
+    margin-bottom: 32px;
+    color: #ff65a3;
+}
+.case-studies {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 32px;
+    justify-content: center;
+}
+.case-card {
+    background: rgba(255,255,255,0.95);
+    border-radius: 16px;
+    box-shadow: 0 4px 24px rgba(255,126,185,0.10);
+    max-width: 320px;
+    width: 100%;
+    padding: 24px 18px 18px 18px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+.case-card:hover {
+    transform: translateY(-6px) scale(1.03);
+    box-shadow: 0 8px 32px rgba(255,126,185,0.18);
+}
+.case-img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 18px;
+}
+.case-card h3 {
+    font-size: 1.25em;
+    margin: 0 0 10px 0;
+    color: #ff65a3;
+}
+.case-card p {
+    font-size: 1em;
+    color: #333;
+    margin-bottom: 14px;
+}
+.case-link {
+    color: #fff;
+    background: #ff65a3;
+    padding: 8px 18px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background 0.2s;
+}
+.case-link:hover {
+    background: #ff7eb9;
+}
 /* Weather Widget Enhanced Styles */
 .weather-current {
     display: flex;
@@ -53,12 +119,10 @@ body {
     min-height: 100vh;
     margin: 0;
     font-family: 'Segoe UI', Arial, sans-serif;
-        background: linear-gradient(135deg, #ff7eb9 0%, #ff65a3 100%);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
+    background: linear-gradient(135deg, #ff7eb9 0%, #ff65a3 100%);
+    /* Remove flex centering for vertical scroll */
+    display: block;
+    overflow-x: hidden;
 }
 /* Bubbles background */
 .bubbles {
@@ -92,6 +156,7 @@ body {
     text-align: center;
     position: relative;
     z-index: 1;
+    margin: 48px auto 32px auto;
 }
 .profile-pic {
     width: 160px;
