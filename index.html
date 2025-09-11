@@ -13,6 +13,12 @@
         <h1>Hello World</h1>
         <button class="contact-btn">Contact Me</button>
     </div>
+    <div class="weather-widget" id="weather-widget">
+        <div class="weather-loading">
+            <span>🌤️</span>
+            <p>Loading weather...</p>
+        </div>
+    </div>
     <script>
     // Bubble animation script
     function randomBetween(a, b) { return a + Math.random() * (b - a); }
@@ -42,6 +48,95 @@
         spawnBubbles();
     });
     spawnBubbles();
+
+    // Weather widget script (Steps 4-11)
+    function getUserLocation() {
+        return new Promise((resolve, reject) => {
+            if (!navigator.geolocation) {
+                reject(new Error('Geolocation not supported'));
+                return;
+            }
+            navigator.geolocation.getCurrentPosition(
+                (position) => {
+                    resolve({
+                        lat: position.coords.latitude,
+                        lon: position.coords.longitude
+                    });
+                },
+                (error) => {
+                    // Fallback to Seattle coordinates
+                    console.log('Using fallback location');
+                    resolve({ lat: 47.6062, lon: -122.3321 });
+                },
+                { timeout: 5000 }
+            );
+        });
+    }
+
+    async function fetchWeatherData(lat, lon) {
+        const url = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current_weather=true&temperature_unit=fahrenheit&windspeed_unit=mph`;
+        try {
+            const response = await fetch(url);
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            return await response.json();
+        } catch (error) {
+            console.error('Weather fetch failed:', error);
+            throw error;
+        }
+    }
+
+    function getWeatherIcon(weatherCode) {
+        const weatherMap = {
+            0: '☀️',    // Clear sky
+            1: '🌤️',    // Mainly clear
+            2: '⛅',    // Partly cloudy
+            3: '☁️',    // Overcast
+            45: '🌫️',   // Fog
+            48: '🌫️',   // Depositing rime fog
+            51: '🌦️',   // Light drizzle
+            61: '🌧️',   // Slight rain
+            71: '❄️',   // Slight snow
+            95: '⛈️'    // Thunderstorm
+        };
+        return weatherMap[weatherCode] || '🌤️';
+    }
+
+    function displayWeather(weatherData) {
+        const widget = document.getElementById('weather-widget');
+        const current = weatherData.current_weather;
+        const weatherIcon = getWeatherIcon(current.weathercode);
+        const temperature = Math.round(current.temperature);
+        widget.innerHTML = `
+            <div class="weather-current">
+                <div class="weather-icon">${weatherIcon}</div>
+                <div class="weather-temp">${temperature}°F</div>
+            </div>
+            <div class="weather-details">
+                <div class="weather-wind">💨 ${current.windspeed} mph</div>
+                <div class="weather-time">Updated: ${new Date().toLocaleTimeString()}</div>
+            </div>
+        `;
+    }
+
+    async function initWeatherWidget() {
+        try {
+            const location = await getUserLocation();
+            const weatherData = await fetchWeatherData(location.lat, location.lon);
+            displayWeather(weatherData);
+        } catch (error) {
+            document.getElementById('weather-widget').innerHTML = `
+                <div class="weather-error">
+                    <span>⚠️</span>
+                    <p>Weather unavailable</p>
+                </div>
+            `;
+        }
+    }
+    document.addEventListener('DOMContentLoaded', initWeatherWidget);
+    // Auto-refresh every 15 minutes
+    setInterval(initWeatherWidget, 15 * 60 * 1000);
     </script>
 </body>
 </html>
