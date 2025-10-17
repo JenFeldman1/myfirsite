@@ -1,0 +1,144 @@
+# Portfolio Website Source Data
+# Author: Jennifer Feldman
+# Purpose: Use this file to guide AI generation of a UX/Product Design Portfolio website in Visual Studio Code.
+
+site_title: "Jennifer Feldman — UX & Product Designer"
+site_tagline: "Bringing ideas to life through intuitive, human-centered design"
+email: "14jenniferfeldman@gmail.com"
+phone: "781.664.3366"
+
+## ABOUT
+Jennifer Feldman is a UX and Product Designer who brings ideas to life by creating functional and intuitive products that are designed for the people they serve. She leads projects that balance business objectives with user needs — from complex enterprise systems to human-first public service experiences.
+
+## PROJECTS OVERVIEW
+1. Phoenix — Organizing a Complex Product
+2. Vaccine Portal — Serving People During a Time of Need
+3. 3D Datasheet — A Refreshed Product Experience
+4. Paid Family and Medical Leave (PFML) — A Functional Product that Achieved Lofty Goals
+
+---
+
+## PROJECT 1: PHOENIX — How I Organized a Complex Product
+
+**Client:** State insurance rating board  
+**Goal:** Build a cloud-based system to manage and process workers compensation data and achieve independence from legacy systems.  
+**Role:** Led a cross-disciplinary team from research through prototyping and delivery.  
+
+### Key Objectives
+- Build a flawless process to issue experience ratings  
+- Minimize manual intervention  
+- Improve employee experience and efficiency  
+- Enhance customer experience for carriers, brokers, and insureds  
+
+### Approach
+- Led product OKR workshops to align stakeholders  
+- Conducted contextual observation of internal users  
+- Identified pain points: inaccessible interface, slow system, confusing tab structure, excessive manual work  
+- Designed a new information architecture mirroring the data hierarchy  
+- Created wireframes, mockups, and an interactive prototype  
+- Tested designs with multiple user rounds (15 participants, 3 testing cycles)  
+- Developed a reusable component-based design system  
+
+### Impact
+- Improved user navigation and discoverability  
+- Reduced manual data handling  
+- Established product standards and design patterns used in development  
+
+---
+
+## PROJECT 2: VACCINE PORTAL — Serving People During a Time of Need
+
+**Client:** State health agency  
+**Goal:** Help residents find convenient COVID-19 vaccination sites.  
+**Role:** Led research, design, and user testing for a public-facing vaccine finder tool.  
+
+### Key Insights
+- Elderly users were mentally exhausted by the search process  
+- Many residents booked appointments for friends/family  
+- People wanted reassurance and peace of mind  
+
+### Design Highlights
+- Mapped user mindsets (eligible, not eligible yet, unsure, hesitant)  
+- Conducted card sorting with 17 participants to prioritize homepage content  
+- Designed and tested a vaccine finder (without a map)  
+- Iterated design through 3 rounds of testing  
+- Added logos, real-time availability indicators, and a “Call to Schedule” feature  
+
+### Impact
+- 100,000+ users visited the portal  
+- 74.5% used the availability filter  
+- 44% used the proximity filter  
+- Simplified booking experience and improved trust during a crisis  
+
+---
+
+## PROJECT 3: 3D DATASHEET — A Refreshed Product Experience
+
+**Client:** Life sciences organization  
+**Goal:** Redesign the e-commerce experience for purchasing lab mice.  
+**Role:** Product designer embedded within the product team.  
+
+### Highlights
+- Collaborated with PM to prioritize features and build roadmap  
+- Refined prototype for clarity and interactivity  
+- Designed dynamic components like pricing panels, phenotype carousels, and interactive calculators  
+- Tested prototype with real users via analytics and Maze usability studies  
+
+### Impact
+- 3,000+ user interactions within the first week  
+- 1,180 unique visitors  
+- Positive feedback: “It’s easier and faster to check the price.”  
+
+---
+
+## PROJECT 4: PAID FAMILY AND MEDICAL LEAVE (PFML) — A Functional Product that Achieved Lofty Goals
+
+**Client:** State paid leave authority  
+**Goal:** Launch a user-friendly digital experience to educate and enroll employers and employees in a new benefits program.  
+
+### Approach
+- Conducted 20+ interviews and focus groups  
+- Developed 7 personas and journey maps  
+- Designed guided user journeys tailored to each group (Employers, TPAs, Self-Employed, Employees)  
+- Created sitemaps, wireframes, and content strategy  
+- Validated through usability testing before development  
+
+### Impact
+- 139,000+ businesses registered  
+- $533M+ fund balance achieved  
+- Established trust and transparency through a human-centered digital experience  
+
+---
+
+## TESTIMONIALS
+> “Jen has learned complex UI needs very quickly and we are confident she will drive us toward innovative solutions.” — President/CEO  
+> “Jen grasps my vision and understands project objectives.” — Chief Product Officer  
+
+---
+
+## DESIGN PHILOSOPHY
+Empathy first. Design for real people, not personas. Balance structure with creativity.  
+Every product should tell a story that makes complexity feel simple.
+
+---
+
+## SITE STRUCTURE RECOMMENDATION (for AI)
+- **Home:** Hero intro + featured projects  
+- **About:** Bio, philosophy, contact info  
+- **Projects:** Each project as its own page with case study breakdowns  
+- **Contact:** Email form + links to LinkedIn or resume  
+- **Testimonials:** Optional section with client quotes  
+- **Design System:** Optional visual showcase of reusable components  
+
+---
+
+## VISUAL STYLE HINTS
+- Clean, modern layout  
+- Neutral palette (white, slate, soft blue accents)  
+- Sans-serif typography  
+- Use generous whitespace and grid layouts  
+- Include prototype or wireframe image placeholders  
+
+---
+
+# END OF FILE
