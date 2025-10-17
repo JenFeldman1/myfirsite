@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="bubbles"></div>
     <div class="container">
         <img src="profile.jpg" alt="Your Photo" class="profile-pic">
         <h1>Hello World</h1>
@@ -37,35 +36,6 @@
         </div>
     </section>
     <script>
-    // Bubble animation script
-    function randomBetween(a, b) { return a + Math.random() * (b - a); }
-    function createBubble() {
-        const bubble = document.createElement('div');
-        bubble.className = 'bubble';
-        const size = randomBetween(16, 48);
-        bubble.style.width = `${size}px`;
-        bubble.style.height = `${size}px`;
-        bubble.style.left = `${randomBetween(0, 100)}vw`;
-        bubble.style.animationDuration = `${randomBetween(4, 10)}s`;
-        bubble.style.opacity = randomBetween(0.4, 0.9);
-        document.querySelector('.bubbles').appendChild(bubble);
-        setTimeout(() => bubble.remove(), bubble.style.animationDuration.replace('s','') * 1000);
-    }
-    function spawnBubbles() {
-        const min = Math.max(6, Math.floor(window.innerWidth / 120));
-        const max = Math.max(12, Math.floor(window.innerWidth / 60));
-        const count = randomBetween(min, max);
-        for (let i = 0; i < count; i++) {
-            setTimeout(createBubble, randomBetween(0, 4000));
-        }
-    }
-    setInterval(spawnBubbles, 2000);
-    window.addEventListener('resize', () => {
-        document.querySelector('.bubbles').innerHTML = '';
-        spawnBubbles();
-    });
-    spawnBubbles();
-
     // Weather widget script (Steps 4-11)
     function getUserLocation() {
         return new Promise((resolve, reject) => {
